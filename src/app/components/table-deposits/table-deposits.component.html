@@ -1,0 +1,32 @@
+<h1> NELPDAM<span>PAY</span> DEPO<span>SITS </span></h1>
+<button (click)="Ondepot()">TABLE DES DEPOTS</button>
+
+<table class="responstable">
+
+    <tr>
+        <th data-th="Driver details">id</th>
+        <th>Date de depot</th>
+        <th>Montant</th>
+        <th>Compte</th>
+        <th>User Depositant</th>
+     
+       
+
+    </tr>
+
+    <tr *ngFor="let depot of depots">
+
+        <td>{{ depot.id }}</td>
+        <th>{{depot.datedepot}}</th>
+          <th>{{depot.montant }}</th>
+        <td>{{ depot.compte }}</td>
+        <th>{{depot.caissier}}</th>
+        
+   
+     
+
+
+    </tr>
+
+</table>
+

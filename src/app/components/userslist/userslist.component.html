@@ -1,0 +1,30 @@
+<h1> NELPDAM<span>PAY</span> DASH<span>BORD ALL USERS!</span></h1>
+<button (click)="Onusers()">USERS TABLE</button>
+
+<table class="responstable">
+
+    <tr>
+        <th data-th="Driver details">id</th>
+        <th>Nom</th>
+        <th>Username</th>
+        <th>email</th>
+        <th>Role</th>
+        <th>Partenaire</th>
+        <th>Block</th>
+
+    </tr>
+
+    <tr *ngFor="let user of users">
+
+        <td>{{ user.id }}</td>
+        <td>{{ user.nom }}</td>
+        <th>{{user.username}}</th>
+        <th>{{user.email}}</th>
+        <th>{{user.role}}</th>
+        <th>{{user.partenaire}}</th>
+        <td><input type="radio" /></td>
+
+
+    </tr>
+
+</table>

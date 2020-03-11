@@ -1,0 +1,38 @@
+<form [formGroup]="userform">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Personal Details</li>
+                <li>Social Profiles</li>
+                <li>Account Setup</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Personal Details</h2>
+                <h3 class="fs-subtitle">Tell us something more about you</h3>
+                <input type="text" name="fname" placeholder="Nom" FormControlName="nom" />
+                <input type=" text " name="username " placeholder="Username " FormControlName="username" />
+                <input type="text " name="role " placeholder="Role" FormControlName="role" />
+                <input type="button " name="next " class="next action-button " value="Next " />
+            </fieldset>
+
+            <fieldset>
+                <h2 class="fs-title ">User presque cree!</h2>
+                <h3 class="fs-subtitle ">Fill in your credentials</h3>
+                <input type="text " name="email " placeholder="Email " FormControlName="email" />
+                <input type="password " name="pass " placeholder="Password " FormControlName="password" />
+                <input type="password " name="cpass " placeholder="Affectations" FormControlName="affectations" />
+                <input type="button " name="previous " class="previous action-button-previous " value="Previous " />
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title ">Termine</h2>
+                <h3 class="fs-subtitle ">Verifier bien les infos saisises</h3>
+                <h3>Cliquer sur submit pour creer!</h3>
+                <input type="submit " name="submit " (click)="AddUser(userform)" class=" submit action-button " value="Submit " />
+
+            </fieldset>
+        </div>
+    </div>
+</form>
