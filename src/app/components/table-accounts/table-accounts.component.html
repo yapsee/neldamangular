@@ -1,28 +1,25 @@
-<h1> NELPDAM<span>PAY</span> ACC<span>OUNTS </span></h1>
+<h3> NELPDAM<span>PAY</span> ACC<span>OUNTS </span></h3>
 <button (click)="Onaccount()">TABLE DES COMPTES</button>
 
 <table class="responstable">
 
     <tr>
-        <th data-th="Driver details">id</th>
-        <th>SOLDE</th>
+        <th data-th="Driver details">SOLDE</th>
         <th>PARTENAIRE</th>
         <th>ADMIN CREATEUR</th>
         <th>DATE DE CREATION</th>
         <th>NUMERO</th>
-       
+
 
     </tr>
 
     <tr *ngFor="let account of accounts">
+        <td>{{account.solde}}</td>
+        <td>{{account.partenaire.ninea}}</td>
+        <td>{{account.admin.nom}}</td>
+        <td>{{account.datecreation}}</td>
+        <td>{{account.numerocompte}}</td>
 
-        <td>{{ account.id }}</td>
-          <th>{{account.solde}}</th>
-        <td>{{ account.partenaire}}</td>
-        <th>{{account.admin}}</th>
-        <th>{{account.datecreation}}</th>
-        <th>{{account.numerocompte}}</th>
-     
 
 
     </tr>

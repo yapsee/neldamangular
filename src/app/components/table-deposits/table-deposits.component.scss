@@ -1,12 +1,12 @@
 $table-breakpoint: 480px;
-$table-background-color: rgb(129, 167, 129);
+$table-background-color: rgb(255, 255, 255);
 $table-text-color: #141414;
-$table-outer-border: 1px solid #4d9453;
-$table-cell-border: 1px solid #4ca75f;
+$table-outer-border: 1px solid #ffffff;
+$table-cell-border: 1px solid #ffffff;
 // Extra options for table style (parse these arguments when including your mixin)
 $table-border-radius: 10px;
 $table-highlight-color: #eaf3f3;
-$table-header-background-color: #4d9453;
+$table-header-background-color: #34aa5b;
 $table-header-text-color: #fff;
 $table-header-border: 1px solid #fff;
 // The Responstable mixin
@@ -94,11 +94,11 @@ body {
     background: #f2f2f2;
 }
 
-h1 {
+h2 {
     font-family: Verdana;
     font-weight: normal;
     color: #141414;
     span {
-        color: #3aa75e;
+        color: #6ea882;
     }
 }

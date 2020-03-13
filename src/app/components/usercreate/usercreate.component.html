@@ -1,0 +1,29 @@
+<form [formGroup]="userform" class="login-box">
+    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY</h1>
+    <div class="texbox">
+        <input type="text" formControlName="nom">
+        <span data-placeholder="Entrer le nom user"></span>
+    </div>
+
+    <div class="texbox">
+        <input type="text" required formControlName="username">
+        <span data-placeholder="Entrer le username"></span>
+    </div>
+    <div class="texbox">
+        <input type="text" required formControlName="password">
+        <span data-placeholder="Entrer le password"></span>
+    </div>
+    <div class="texbox">
+        <select formControlName="role">
+            <option *ngFor="let role of roles">{{role.libelle}}
+        </option>
+        </select>
+    </div>
+    <div class="texbox">
+        <input type="text" required formControlName="email">
+        <span data-placeholder="Entrer email"></span>
+    </div>
+
+    <input type="submit" (click)="OnAdduser()" class="logbtn " login=" " value="ENREGISTRER ">
+
+</form>

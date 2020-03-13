@@ -17,6 +17,8 @@ import { UserslistComponent } from './components/userslist/userslist.component';
 import { TableAccountsComponent } from './components/table-accounts/table-accounts.component';
 import { TableDepositsComponent } from './components/table-deposits/table-deposits.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { UsercreateComponent } from './components/usercreate/usercreate.component';
+import { AccountcreateComponent } from './components/accountcreate/accountcreate.component';
 
 
 
@@ -33,7 +35,9 @@ import { CardsComponent } from './components/cards/cards.component';
     UserslistComponent,
     TableAccountsComponent,
     TableDepositsComponent,
-    CardsComponent
+    CardsComponent,
+    UsercreateComponent,
+    AccountcreateComponent
   ],
   imports: [
     BrowserModule,

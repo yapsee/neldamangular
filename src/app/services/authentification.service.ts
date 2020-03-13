@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +32,7 @@ export class AuthentificationService {
   getConnexion(user: User) {
 
     return this.httpClient.post<User>(`${environment.apiUrl}/login_check`, user).
+
     pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
@@ -45,7 +47,11 @@ export class AuthentificationService {
     return this.httpClient.get<Role>(`${environment.apiUrl}/api/roles`);
 
   }
-  // recuperation des users
+   // post User
+    postUser(user: User) {
+    return this.httpClient.post<User>(`${environment.apiUrl}/api/users`, user);
+    }
+// recuperation des users
     getUsers() {
     return this.httpClient.get<User>(`${environment.apiUrl}/api/users`);
     }
@@ -57,9 +63,9 @@ export class AuthentificationService {
     getDepots() {
     return this.httpClient.get<Depot>(`${environment.apiUrl}/api/depots`);
     }
-  // post User
-    PostUser(user: User) {
-    return this.httpClient.post<User>(`${environment.apiUrl}/api/users`, user);
-  }
+    // post compte pour un partenaire nouveau
+    postBank(bank: BankAccount) {
+    return this.httpClient.post<BankAccount>(`${environment.apiUrl}/api/bank_accounts`, bank);
+    }
 }
 
