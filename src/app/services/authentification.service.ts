@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -66,6 +68,10 @@ export class AuthentificationService {
     // post compte pour un partenaire nouveau
     postBank(bank: BankAccount) {
     return this.httpClient.post<BankAccount>(`${environment.apiUrl}/api/bank_accounts`, bank);
+    }
+    // post depot sur un compte
+     postDepot(depot: Depot) {
+    return this.httpClient.post<Depot>(`${environment.apiUrl}/api/depots`, depot);
     }
 }
 

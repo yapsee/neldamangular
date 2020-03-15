@@ -11,6 +11,7 @@ import { TableDepositsComponent } from './components/table-deposits/table-deposi
 import { CardsComponent } from './components/cards/cards.component';
 import { UsercreateComponent } from './components/usercreate/usercreate.component';
 import { AccountcreateComponent } from './components/accountcreate/accountcreate.component';
+import { DepositComponent } from './components/deposit/deposit.component';
 
 const routes: Routes = [
 {path: 'login', component: ConnexionComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
 {path: 'table-deposits', component: TableDepositsComponent},
 {path: 'usercreate', component: UsercreateComponent},
 {path: 'accountcreate', component: AccountcreateComponent},
+{path: 'depot', component: DepositComponent},
 ];
 
 @NgModule({

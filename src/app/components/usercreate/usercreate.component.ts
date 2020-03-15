@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { environment } from './../../../environments/environment';
 import { Role } from './../../models/role';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -12,47 +14,47 @@ import { AuthentificationService } from '../../services/authentification.service
 export class UsercreateComponent implements OnInit {
 
    userform: FormGroup;
-   roles: any;
+   roles;
 
-  constructor(private auth: AuthentificationService) { }
+  constructor(private auth: AuthentificationService, private route: Router) { }
 
   ngOnInit() {
-    // RECUPERATION ROLES POUR AFFICHER DANS LE FORMULAIRE
-     this.auth.getLibelle().subscribe(
-     (res: Role) => {
-        this.roles = res['hydra:member'];
-        console.log(this.roles );
-      });
-
 
 // DECLARER LES ATTRIBUTS AS FORMCONTROL
      this.userform = new FormGroup({
+      nom: new FormControl(''),
      username: new FormControl(''),
-     email: new FormControl(''),
-     nom: new FormControl(''),
      password: new FormControl(''),
      role: new FormControl(''),
+     email: new FormControl(''),
 
      });
+ // RECUPERATION ROLES POUR AFFICHER DANS LE FORMULAIRE
+
+     this.auth.getLibelle().subscribe(
+       data => {
+         this.roles = data['hydra:member'];
+         console.log(data['hydra:member']);
+       });
   }
 
 
 
 OnAdduser() {
+ console.log(this.userform.value);
+ const user = {
+   nom : this.userform.value.nom,
+   username : this.userform.value.username,
+   password : this.userform.value.password,
+   email : this.userform.value.email,
+   role : `/api/roles/${this.userform.value.role}`,
+ };
+ this.auth.postUser(user).subscribe(
+  data => {
+    console.log(data);
+    localStorage.setItem('token', data.token);
+    this.route.navigate(['table-users']);
 
-  // console.log(this.userform.value);
-  const user = {
-    username: this.userform.value.username,
-     nom: this.userform.value.nom,
-      email: this.userform.value.email,
-       role: this.userform.value.role,
-         password: this.userform.value.password,
-  };
-  this.auth.postUser(user).subscribe(
-    data => {
-      console.log(data);
-    }
-  );
-
+});
 }
 }

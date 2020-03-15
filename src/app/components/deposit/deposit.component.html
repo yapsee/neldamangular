@@ -1,0 +1,16 @@
+<form [formGroup]="deposer" class="login-box">
+    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY</h1>
+    <div class="texbox">
+        <input type="number" formControlName="montant">
+        <span data-placeholder="Saisir le montant montant"></span>
+    </div>
+    <div class="texbox">
+        <select formControlName="compte">
+            <option value="{{account.id}}" *ngFor="let account of accounts">{{account.numerocompte}}
+            </option>
+        </select>
+    </div>
+
+    <input type="submit" (click)="OnDeposit()" class="logbtn " login=" " value="ENREGISTRER ">
+
+</form>

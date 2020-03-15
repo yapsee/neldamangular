@@ -10,20 +10,17 @@
         <span data-placeholder="Entrer le username"></span>
     </div>
     <div class="texbox">
-        <input type="text" required formControlName="password">
+        <input type="password" required formControlName="password">
         <span data-placeholder="Entrer le password"></span>
     </div>
     <div class="texbox">
         <select formControlName="role">
-            <option *ngFor="let role of roles">{{role.libelle}}
-        </option>
-        </select>
+		<option   value="{{ role.id}}" *ngFor ="let role of roles">{{ role.libelle }}</option>
+	</select>
     </div>
     <div class="texbox">
         <input type="text" required formControlName="email">
         <span data-placeholder="Entrer email"></span>
     </div>
 
-    <input type="submit" (click)="OnAdduser()" class="logbtn " login=" " value="ENREGISTRER ">
-
-</form>
+    <input type="submit" (click)="OnAdduser()" class="logbtn " login=" " value="ENREGISTRER "></form>
