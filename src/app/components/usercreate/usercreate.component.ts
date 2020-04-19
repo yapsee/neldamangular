@@ -1,6 +1,4 @@
 import { Router } from '@angular/router';
-import { environment } from './../../../environments/environment';
-import { Role } from './../../models/role';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthentificationService } from '../../services/authentification.service';

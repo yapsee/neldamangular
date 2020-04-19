@@ -1,39 +1,14 @@
-<form [formGroup]="formConnexion">
-
-    <div class="cont">
-        <div class="form sign-in">
-            <h2>WELCOME TO NELDAMPAY</h2>
-            <div class="">
-                <div class="form-group">
-                    <label>
-            <span>Email</span>
-            <input type="text" formControlName="username" class = "form-control"/>
-        </label> </div>
-            </div>
-            <div class="form-group ">
-                <label>
-                    <span>Password</span>
-                    <input type="password" formControlName="password" class = "form-control "/>
-                    </label>
-            </div>
-            <p class="forgot-pass ">Forgot password?</p>
-            <button type="submit " (click)="OnConnexion()" class="submit">Sign In</button>
-
-        </div>
-        <div class="sub-cont ">
-            <div class="img ">
-                <div class="img__text m--up ">
-                    <h2>You said mobile banking?</h2>
-                    <p>NELPDAMPAY is the best fintech solution for all of us!</p>
-                </div>
-
-                <div class=" img__text m--in ">
-                    <h2>One of us?</h2>
-                    <p>If you already has an account, just sign in. We've missed you!</p>
-                </div>
-
-            </div>
-
-        </div>
+<div class="wrap">
+    <div class="topdiag"></div>
+    <div class="topdiag_2"></div>
+    <div class="bottomdiag"></div>
+    <div class="bottomdiag_2"></div>
+    <div class="profile_img">
+        <img src="http://routewp.com/wp-content/uploads/2014/06/2.jpg" alt="">
     </div>
-</form>
+    <form action="" class="main_form" [formGroup]="formConnexion">
+        <input type="text" placeholder="Login" formControlName="username">
+        <input type="password" placeholder="Password" formControlName="password">
+        <button type="submit " (click)="OnConnexion()" class="btn_log">Sign In</button>
+    </form>
+</div>

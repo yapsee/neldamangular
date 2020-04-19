@@ -8,12 +8,11 @@ import { AuthentificationService } from '../../services/authentification.service
 })
 export class TableroleComponent implements OnInit {
   roles;
+  search;
+ 
+ constructor(private auth: AuthentificationService) { }
 
-  constructor(private auth: AuthentificationService) { }
-
-  ngOnInit() { }
-
-   OnRoles() {
+  ngOnInit() {
     this.auth.getLibelle().subscribe(
       data => {
         this.roles = data ['hydra:member'];

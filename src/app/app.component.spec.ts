@@ -32,4 +32,5 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('neldamang app is running!');
   });
+  
 });

@@ -1,0 +1,62 @@
+<section class="ready__started project__form">
+    <div class="container">
+        <h3 class="text-center">BIENVENUE CHEZ NELPAMPAY! TRANSACTIONS(RETRAIT)</h3>
+        <div class="ready__started-box">
+            <form class="main__form" [formGroup]="retrait">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="code" placeholder="xxxxxxx">
+                            <label for="nomsender">Code*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="ninbenef" placeholder="+221776685975" value={{ninbenef}} id="ninbenef">
+                            <label for="numero du beneficiare ">CNI du beneficiare*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text " class="form-control " formControlName="nomsender" placeholder="Yapsee " value={{nomsender}} id="nomsender">
+                            <label for="nomsender ">Nom du sender*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number " class="form-control " formControlName="phonesender" placeholder="+221776685975 " value={{phonesender}} id="phonesender">
+                            <label for="phonesender ">Phone sender*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text " class="form-control " formControlName="nombenef" placeholder="Rosalie " id="nombenef" value={{nombenef}}>
+                            <label for=" nombenef ">Name beneficiaire</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number " class="form-control " formControlName="phonebenef" aria-describedby="phonebenef " placeholder="+2215000000" id="phonebenef " value={{phonebenef}}>
+                            <label for=" phonebenef ">Phone du beneficiaire</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number " class="form-control " formControlName="montantnet" placeholder="520000 " id="montantnet " value={{montantnet}}>
+                            <label for="montantdepot ">Montant net a percevoir</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center ">
+                    <button type="submit " class="btn btn-success" (click)="OnRetrait() "><span>VALIDER LE RETRAIT
+                            </span></button></div>
+            </form>
+        </div>
+    </div>
+</section>

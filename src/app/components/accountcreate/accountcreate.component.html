@@ -1,31 +1,32 @@
 <form [formGroup]="compte" class="login-box">
     <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY||NEW PARTNER</h1>
+    <div class="texbox ">
+        <input type="text " required formControlName="ninea">
+        <span data-placeholder="Submit ninea "></span>
+    </div>
     <div class="texbox">
-        <input type="text" formControlName="nom">
-        <span data-placeholder="Entrer le nom user"></span>
+        <input type="text" formControlName="nom" value={{nom}} id="nom">
+        <span data-placeholder="Entrer le nom user "></span>
     </div>
 
-    <div class="texbox">
-        <input type="text" required formControlName="username">
-        <span data-placeholder="Entrer le username"></span>
+    <div class="texbox ">
+        <input type="text " required formControlName="username" value={{username}} id="username">
+        <span data-placeholder="Entrer le username "></span>
     </div>
-    <div class="texbox">
-        <input type="password" formControlName="password">
-        <span data-placeholder="Entrer le password"></span>
+    <div class="texbox ">
+        <input type="password " formControlName="password" value={{password}} id="password">
+        <span data-placeholder="Entrer le password "></span>
     </div>
-    <div class="texbox">
-        <input type="text" requiredformControlName="email">
-        <span data-placeholder="Entrer email"></span>
+    <div class="texbox ">
+        <input type="text " requiredformControlName="email" value={{email}} id="email">
+        <span data-placeholder="Entrer email "></span>
     </div>
-    <div class="texbox">
-        <input type="text" required formControlName="regicomm">
-        <span data-placeholder="Submit RC"></span>
+    <div class="texbox ">
+        <input type="text " required formControlName="regicomm" value={{regicomm}} id="regicomm">
+        <span data-placeholder="Submit RC "></span>
     </div>
-    <div class="texbox">
-        <input type="text" required formControlName="ninea">
-        <span data-placeholder="Submit ninea"></span>
-    </div>
-    <div class="texbox">
+
+    <div class="texbox ">
         <input type="number" formControlName="montant">
         <span data-placeholder="Entrer le montant "></span>
     </div>

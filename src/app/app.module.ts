@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { FormConnexionComponent } from './components/form-connexion/form-connexion.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './helpers/jwt-interceptor.service';
 import { HomeComponent } from './pages/home/home.component';
 import { TableroleComponent } from './components/tablerole/tablerole.component';
@@ -20,7 +20,14 @@ import { CardsComponent } from './components/cards/cards.component';
 import { UsercreateComponent } from './components/usercreate/usercreate.component';
 import { AccountcreateComponent } from './components/accountcreate/accountcreate.component';
 import { DepositComponent } from './components/deposit/deposit.component';
+import { TransfertComponent } from './components/transfert/transfert.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AffectationComponent } from './components/affectation/affectation.component';
+import { RetraitComponent } from './components/retrait/retrait.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; // filtre de recherche sur une table
+import { PartsComponent } from './components/parts/parts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -39,16 +46,24 @@ import { DepositComponent } from './components/deposit/deposit.component';
     CardsComponent,
     UsercreateComponent,
     AccountcreateComponent,
-    DepositComponent
+    DepositComponent,
+    TransfertComponent,
+    FooterComponent,
+    AffectationComponent,
+    RetraitComponent,
+    PartsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  FormsModule,
+   Ng2SearchPipeModule, // filter pour tables
+   BrowserAnimationsModule,
   ],
   providers: [
-      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true } // pour le login check
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,13 @@
-<button (click)="OnRoles()">Show roles</button>
+<div class="row">
+
+    <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="rechercher un role">
+    </div>
+</div>
 <div class="table-title">
 
 </div>
+
 <table class="table-fill">
     <thead>
         <tr>
@@ -10,7 +16,7 @@
         </tr>
     </thead>
     <tbody class="table-hover">
-        <tr *ngFor="let role of roles">
+        <tr *ngFor="let role of roles | filter:search">
 
             <td class="text-left ">{{role.id}}</td>
             <td class="text-left ">{{role.libelle}}</td>

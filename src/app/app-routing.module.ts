@@ -12,6 +12,10 @@ import { CardsComponent } from './components/cards/cards.component';
 import { UsercreateComponent } from './components/usercreate/usercreate.component';
 import { AccountcreateComponent } from './components/accountcreate/accountcreate.component';
 import { DepositComponent } from './components/deposit/deposit.component';
+import { TransfertComponent } from './components/transfert/transfert.component';
+import { AffectationComponent } from './components/affectation/affectation.component';
+import { RetraitComponent } from './components/retrait/retrait.component';
+import { PartsComponent } from './components/parts/parts.component';
 
 const routes: Routes = [
 {path: 'login', component: ConnexionComponent},
@@ -26,6 +30,10 @@ const routes: Routes = [
 {path: 'usercreate', component: UsercreateComponent},
 {path: 'accountcreate', component: AccountcreateComponent},
 {path: 'depot', component: DepositComponent},
+{path: 'send', component: TransfertComponent},
+{path: 'affect', component: AffectationComponent},
+{path: 'retrait', component: RetraitComponent},
+{path: 'parts', component: PartsComponent},
 ];
 
 @NgModule({

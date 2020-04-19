@@ -9,14 +9,10 @@ import { AuthentificationService } from '../../services/authentification.service
 export class TableAccountsComponent implements OnInit {
 
    accounts;
-
-  constructor(private auth: AuthentificationService) { }
+   searchAcc;
+ constructor(private auth: AuthentificationService) { }
 
   ngOnInit() {
-    this.Onaccount();
-   }
-
-  Onaccount() {
     this.auth.getAccounts().subscribe(
       data => {
         this.accounts = data['hydra:member'];
@@ -29,5 +25,10 @@ export class TableAccountsComponent implements OnInit {
     );
 
   }
+ /* applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  } */
 }
 

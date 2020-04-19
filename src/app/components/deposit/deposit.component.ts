@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { BankAccount } from './../../models/bank-account';
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from '../../services/authentification.service';
@@ -13,7 +14,7 @@ export class DepositComponent implements OnInit {
   deposer: FormGroup;
   accounts: any;
 
-  constructor(private auth: AuthentificationService) { }
+  constructor(private auth: AuthentificationService, private route: Router) { }
 
 ngOnInit() {
     this.deposer = new FormGroup({
@@ -40,6 +41,8 @@ OnDeposit() {
 
     data => {
 console.log(data);
+localStorage.setItem('token', data.token);
+this.route.navigate(['table-deposits']);
     }
 
   );

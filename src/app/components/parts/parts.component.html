@@ -1,0 +1,30 @@
+<h3> NELPDAM<span>PAY</span> ACC<span>OUNTS </span></h3>
+<form class="date-block" [formGroup]="filterForm">
+    <div class="date-block__list">
+
+        <input type="date" placeholder="From Date" formControlName="fromDate">
+
+    </div>
+    <div class="date-block__list">
+
+        <input type="date" placeholder="To Date" formControlName="toDate">
+
+    </div>
+    <button mat-button color="primary" class="primary" (click)="OnFilter()">Submit</button>
+</form>
+<table class="responstable">
+
+    <tr>
+        <th>PARTS ETAT</th>
+        <th>PARTS SYSTEME</th>
+        <th>DATE</th>
+    </tr>
+
+    <tr *ngFor="let trans of transactions | filter:searchPart">
+        <td>{{trans.partetat}}</td>
+        <td>{{trans.partsysteme}}</td>
+        <td>{{trans.datedenvoi}}</td>
+
+    </tr>
+
+</table>

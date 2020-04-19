@@ -1,0 +1,47 @@
+<section class="ready__started project__form">
+    <div class="container">
+        <h3 class="text-center">BIENVENUE CHEZ NELPAMPAY! TRANSACTIONS(ENVOI)</h3>
+        <div class="ready__started-box">
+            <form class="main__form" [formGroup]="transfert">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="nomsender" aria-describedby="nomsender" placeholder="Yapsee " required>
+                            <label for="nomsender">Nom du sender*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="phonesender" aria-describedby="phonesender" placeholder="+221776685975 " required>
+                            <label for="phonesender">Phone sender*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text " class="form-control " formControlName="nombenef" aria-describedby="nombenef" placeholder="Rosalie " required>
+                            <label for="nombenef">Name beneficiaire</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="phonebenef" aria-describedby="phonebenef" placeholder="+2215000000 " required>
+                            <label for="phonebenef">Phone du beneficiaire</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="montantdepot" aria-describedby="montantdepot" placeholder="520000 " required>
+                            <label for="montantdepot">Montant depose</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center ">
+                    <button type="submit " class=" btn btn-get" (click)="OnEnvoi()"><span>VALIDER L'ENVOI</span></button></div>
+            </form>
+        </div>
+    </div>
+</section>

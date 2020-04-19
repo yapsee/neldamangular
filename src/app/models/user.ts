@@ -5,7 +5,6 @@ export interface User {
     password: string;
     token?: string;
     role?: string;
-
-
+    image?: string;
 
 }

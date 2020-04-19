@@ -1,5 +1,10 @@
 <h3> NELPDAM<span>PAY</span> ACC<span>OUNTS </span></h3>
-<button (click)="Onaccount()">TABLE DES COMPTES</button>
+<div class="row">
+
+    <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchAcc" placeholder="rechercher un compte">
+    </div>
+</div>
 
 <table class="responstable">
 
@@ -13,7 +18,7 @@
 
     </tr>
 
-    <tr *ngFor="let account of accounts">
+    <tr *ngFor="let account of accounts |filter:searchAcc">
         <td>{{account.solde}}</td>
         <td>{{account.partenaire.ninea}}</td>
         <td>{{account.admin.nom}}</td>

@@ -1,0 +1,28 @@
+<form [formGroup]="affect" class="login-box">
+    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY</h1>
+
+    <div class="texbox">
+        <div><label>COMPTE</label></div>
+        <select formControlName="compte">
+            <option value="{{account.id}}" *ngFor="let account of accounts">{{account.id }}</option>
+        </select>
+    </div>
+    <div class="texbox">
+        <div><label>USER</label></div>
+        <select formControlName="affectedto">
+            <option value="{{user.id}}" *ngFor="let user of users">{{user.username}}</option>
+        </select>
+    </div>
+    <div class="texbox">
+        <div><label>DATE DE DEBUT</label></div><input type="date" required formControlName="datedebut">
+        <span data-placeholder="Renseigner la date de debut"></span>
+    </div>
+    <div class="texbox">
+        <div><label>DATE DE FIN</label></div>
+        <input type="date" required formControlName="datefin">
+        <span data-placeholder="Renseigner la date de fin"></span>
+    </div>
+
+
+    <input type="submit " (click)="OnAffect() " class="logbtn " login=" " value="VALIDER L'AFFECTATION">
+</form>
