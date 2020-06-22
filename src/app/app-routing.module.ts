@@ -37,7 +37,7 @@ const routes: Routes = [
 {path: 'affect', component: AffectationComponent, canActivate: [AuthGuard]},
 {path: 'retrait', component: RetraitComponent, canActivate: [AuthGuard]},
 {path: 'parts', component: PartsComponent, canActivate: [AuthGuard]},
-{path: 'systeme', component: HomeComponent, canActivate: [AuthGuard],
+{path: 'systeme', component: HomeComponent, canActivate: [RoleGuard],
     data: {
       expectedRole: 'ROLE_ADMINSYS' } },
 { path: '**', redirectTo: '' }
