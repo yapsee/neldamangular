@@ -46,7 +46,9 @@ export class AffectationComponent implements OnInit {
  };
  this.auth.Affecter(affect).subscribe(
   data => {
-    console.log(data);
+    //console.log(data);
+   alert(JSON.stringify('Vous venez d/affecter un compte au user' + data.affectedto ));
+
 
 });
 }

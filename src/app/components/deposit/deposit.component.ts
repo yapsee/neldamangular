@@ -40,9 +40,11 @@ OnDeposit() {
   this.auth.postDepot(depot).subscribe(
 
     data => {
-console.log(data);
-localStorage.setItem('token', data.token);
-this.route.navigate(['table-deposits']);
+// console.log(data);
+ alert(JSON.stringify('Vous venez de deposer une somme de' + data.montant + 'sur ce compte'));
+
+ localStorage.setItem('token', data.token);
+ this.route.navigate(['table-deposits']);
     }
 
   );

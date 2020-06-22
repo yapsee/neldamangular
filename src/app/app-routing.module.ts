@@ -16,24 +16,31 @@ import { TransfertComponent } from './components/transfert/transfert.component';
 import { AffectationComponent } from './components/affectation/affectation.component';
 import { RetraitComponent } from './components/retrait/retrait.component';
 import { PartsComponent } from './components/parts/parts.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './auth.guard';
+import { RoleGuard } from './role.guard';
 
 const routes: Routes = [
 {path: 'login', component: ConnexionComponent},
-{path: '', component: CardsComponent },
-{path: 'home', component: CardsComponent },
-{path: 'add-user', component: AdduserComponent},
-{path: 'add-role', component: AddroleComponent},
-{path: 'table-role', component: TableroleComponent},
-{path: 'table-users', component: UserslistComponent},
-{path: 'table-accounts', component: TableAccountsComponent},
-{path: 'table-deposits', component: TableDepositsComponent},
-{path: 'usercreate', component: UsercreateComponent},
-{path: 'accountcreate', component: AccountcreateComponent},
-{path: 'depot', component: DepositComponent},
-{path: 'send', component: TransfertComponent},
-{path: 'affect', component: AffectationComponent},
-{path: 'retrait', component: RetraitComponent},
-{path: 'parts', component: PartsComponent},
+{path: '', component: ConnexionComponent},
+{path: 'home', component: CardsComponent, canActivate: [AuthGuard]},
+{path: 'add-user', component: AdduserComponent, canActivate: [AuthGuard]},
+{path: 'add-role', component: AddroleComponent, canActivate: [AuthGuard]},
+{path: 'table-role', component: TableroleComponent, canActivate: [AuthGuard]},
+{path: 'table-users', component: UserslistComponent, canActivate: [AuthGuard]},
+{path: 'table-accounts', component: TableAccountsComponent, canActivate: [AuthGuard]},
+{path: 'table-deposits', component: TableDepositsComponent, canActivate: [AuthGuard]},
+{path: 'usercreate', component: UsercreateComponent, canActivate: [AuthGuard]},
+{path: 'accountcreate', component: AccountcreateComponent, canActivate: [AuthGuard]},
+{path: 'depot', component: DepositComponent, canActivate: [AuthGuard]},
+{path: 'send', component: TransfertComponent, canActivate: [AuthGuard]},
+{path: 'affect', component: AffectationComponent, canActivate: [AuthGuard]},
+{path: 'retrait', component: RetraitComponent, canActivate: [AuthGuard]},
+{path: 'parts', component: PartsComponent, canActivate: [AuthGuard]},
+{path: 'systeme', component: HomeComponent, canActivate: [AuthGuard],
+    data: {
+      expectedRole: 'ROLE_ADMINSYS' } },
+{ path: '**', redirectTo: '' }
 ];
 
 @NgModule({

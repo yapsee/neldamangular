@@ -1,36 +1,66 @@
-<form [formGroup]="compte" class="login-box">
-    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY||NEW PARTNER</h1>
-    <div class="texbox ">
-        <input type="text " required formControlName="ninea">
-        <span data-placeholder="Submit ninea "></span>
+<app-navbar></app-navbar>
+<section class="ready__started project__form">
+    <div class="container">
+        <h3 class="text-center">NELDAMPAY</h3>
+        <p>Vous avez la possibilite de creer un nouveau compte pour un partenaire existant ou creer un partenaire
+        </p>
+        <div class="ready__started-box">
+            <form class="main__form" [formGroup]="compte">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="ninea" placeholder="xxxxxx">
+                            <label for="nomsender">NINEA*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text" class="form-control " formControlName="nom" placeholder="Ahmed" value={{nom}} id="nom">
+                            <label for="numero du beneficiare ">Nom*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text " class="form-control " formControlName="username" placeholder="Yapsee " value={{username}} id="username">
+                            <label for="username">Username*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="password" class="form-control " formControlName="phonesender" placeholder="....." value={{password}} id="password">
+                            <label for="password">Password*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="text " class="form-control " formControlName="email" placeholder="tamaro@neldam.com" value={{email}} id="email">
+                            <span data-placeholder="Entrer email "></span>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="regicomm" aria-describedby="regicomm" placeholder="DRH456" value={{regicomm}} id="regicomm">
+                            <label for="regicomm">No Registre Commerce</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="form-group ">
+                            <input type="number" class="form-control " formControlName="montant" placeholder="520000 ">
+                            <label for="montantdepot ">Montant de depot</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center ">
+                    <button type="submit " class="btn btn-get" (click)="OnCompte() "><span>CREER UN COMPTE
+                        </span></button></div>
+            </form>
+        </div>
     </div>
-    <div class="texbox">
-        <input type="text" formControlName="nom" value={{nom}} id="nom">
-        <span data-placeholder="Entrer le nom user "></span>
-    </div>
-
-    <div class="texbox ">
-        <input type="text " required formControlName="username" value={{username}} id="username">
-        <span data-placeholder="Entrer le username "></span>
-    </div>
-    <div class="texbox ">
-        <input type="password " formControlName="password" value={{password}} id="password">
-        <span data-placeholder="Entrer le password "></span>
-    </div>
-    <div class="texbox ">
-        <input type="text " requiredformControlName="email" value={{email}} id="email">
-        <span data-placeholder="Entrer email "></span>
-    </div>
-    <div class="texbox ">
-        <input type="text " required formControlName="regicomm" value={{regicomm}} id="regicomm">
-        <span data-placeholder="Submit RC "></span>
-    </div>
-
-    <div class="texbox ">
-        <input type="number" formControlName="montant">
-        <span data-placeholder="Entrer le montant "></span>
-    </div>
-
-    <input type="submit " (click)="OnCompte() " class="logbtn " login=" " value="ENREGISTRER PARTNER ">
-
-</form>
+</section>

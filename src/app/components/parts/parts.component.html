@@ -1,4 +1,6 @@
-<h3> NELPDAM<span>PAY</span> ACC<span>OUNTS </span></h3>
+<app-navbar></app-navbar>
+<h3> NELPDAM<span>PAY</span> PARTS</h3>
+
 <form class="date-block" [formGroup]="filterForm">
     <div class="date-block__list">
 
@@ -10,7 +12,7 @@
         <input type="date" placeholder="To Date" formControlName="toDate">
 
     </div>
-    <button mat-button color="primary" class="primary" (click)="OnFilter()">Submit</button>
+    <button mat-button color="secondary" class="primary" (click)="applyFilter()">Search By Period</button>
 </form>
 <table class="responstable">
 
@@ -20,10 +22,10 @@
         <th>DATE</th>
     </tr>
 
-    <tr *ngFor="let trans of transactions | filter:searchPart">
+    <tr *ngFor="let trans of transactions">
         <td>{{trans.partetat}}</td>
         <td>{{trans.partsysteme}}</td>
-        <td>{{trans.datedenvoi}}</td>
+        <td>{{trans.datedenvoi | date:'dd/MM/yyyy'}}</td>
 
     </tr>
 

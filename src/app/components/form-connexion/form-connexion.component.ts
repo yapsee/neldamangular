@@ -32,7 +32,7 @@ formConnexion: FormGroup;
     };
     this.auth.getConnexion(user).subscribe(
       data => {
-        console.log(data);
+        //console.log(data);
         localStorage.setItem('token', data.token);
         this.route.navigate(['home']);
       }

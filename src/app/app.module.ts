@@ -28,6 +28,8 @@ import { RetraitComponent } from './components/retrait/retrait.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; // filtre de recherche sur une table
 import { PartsComponent } from './components/parts/parts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 
 @NgModule({
@@ -61,6 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   FormsModule,
    Ng2SearchPipeModule, // filter pour tables
    BrowserAnimationsModule,
+    MatSliderModule,
   ],
   providers: [
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true } // pour le login check

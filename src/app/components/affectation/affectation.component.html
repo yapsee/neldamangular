@@ -1,10 +1,12 @@
+<app-navbar></app-navbar>
 <form [formGroup]="affect" class="login-box">
-    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY</h1>
+    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color:  #33077f">NELDAMPAY</h1>
 
+    <p>Affecter un compte a un de vos caissiers suivant une periode</p>
     <div class="texbox">
         <div><label>COMPTE</label></div>
         <select formControlName="compte">
-            <option value="{{account.id}}" *ngFor="let account of accounts">{{account.id }}</option>
+            <option value="{{account.id}}" *ngFor="let account of accounts">{{account.numerocompte }}</option>
         </select>
     </div>
     <div class="texbox">

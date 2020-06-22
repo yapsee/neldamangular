@@ -1,5 +1,7 @@
+<app-navbar></app-navbar>
 <form [formGroup]="deposer" class="login-box">
-    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color: #00A03A">NELDAMPAY</h1>
+    <h1 class="blanc" style="font-size: 25px;padding-bottom:20px;color:  #33077f">NELDAMPAY</h1>
+    <p>Faire un depot sur un compte partenaire (min 500000)</p>
     <div class="texbox">
         <input type="number" formControlName="montant">
         <span data-placeholder="Saisir le montant montant"></span>
@@ -11,6 +13,6 @@
         </select>
     </div>
 
-    <input type="submit" (click)="OnDeposit()" class="logbtn " login=" " value="ENREGISTRER ">
+    <input type="submit" (click)="OnDeposit()" class="logbtn" login=" " value="ENREGISTRER ">
 
 </form>

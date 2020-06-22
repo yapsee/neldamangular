@@ -70,7 +70,9 @@ search() {
      };
     this.auth.faireRetrait(retrait).subscribe(
         data => {
-          console.log(data);
+         console.log(data);
+         alert(JSON.stringify('Retrait effectue avec succes Merci d/avoir fait confiance a NELDAMPAY'));
+
         }
       );
  }

@@ -6,7 +6,7 @@ $table-cell-border: 1px solid #ffffff;
 // Extra options for table style (parse these arguments when including your mixin)
 $table-border-radius: 10px;
 $table-highlight-color: #eaf3f3;
-$table-header-background-color: #34aa5b;
+$table-header-background-color: #33077f;
 $table-header-text-color: #fff;
 $table-header-border: 1px solid #fff;
 // The Responstable mixin
@@ -99,20 +99,6 @@ h2 {
     font-weight: normal;
     color: #141414;
     span {
-        color: #6ea882;
+        color: #33077f;
     }
-}
-
-.search-hero {
-    max-width: 500px;
-    padding-bottom: 50px;
-    margin: auto;
-}
-
-.form-control {
-    box-shadow: 0 10px 40px 0 #b0c1d9;
-}
-
-.form-control::placeholder {
-    font-family: FontAwesome;
 }

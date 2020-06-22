@@ -11,10 +11,9 @@ export class TableDepositsComponent implements OnInit {
 
   constructor(private auth: AuthentificationService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
 
-  Ondepot() {
-    this.auth.getDepots().subscribe(
+ this.auth.getDepots().subscribe(
       data => {
         this.depots = data['hydra:member'];
         console.log(data['hydra:member']

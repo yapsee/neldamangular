@@ -5,7 +5,7 @@ import { Role } from './../models/role';
 import { BankAccount } from './../models/bank-account';
 import { Depot } from './../models/depot';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Transactions } from '../models/transactions';
@@ -22,8 +22,10 @@ import { Affectation } from '../models/affectation';
 export class AuthentificationService {
 
     private currentUserSubject: BehaviorSubject<User>;
+    public currentUser: Observable<User>; // called for my logout
   sanitizer: any;
  constructor(private httpClient: HttpClient, sanitizer: DomSanitizer) {
+   // recuperation du token
          this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
    }
 
@@ -39,6 +41,7 @@ export class AuthentificationService {
     return this.httpClient.post<User>(`${environment.apiUrl}/login_check`, user).
 
     pipe(map(user => {
+                // stocker le token du current user en local
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
@@ -108,6 +111,12 @@ export class AuthentificationService {
      // get transactions
      getTrans() {
     return this.httpClient.get<Transactions>(`${environment.apiUrl}/api/transactions`);
+    }
+    // deconnexion
+        logout() {
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
+        this.currentUserSubject.next(null);
     }
 }
 

@@ -50,6 +50,8 @@ OnAdduser() {
  this.auth.postUser(user).subscribe(
   data => {
     console.log(data);
+    alert(JSON.stringify('La creation d/un nouveau utilisateur a ete bien prise en compte Merci'));
+
     localStorage.setItem('token', data.token);
     this.route.navigate(['table-users']);
 

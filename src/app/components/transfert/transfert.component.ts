@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthentificationService } from '../../services/authentification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transfert',
@@ -9,7 +10,7 @@ import { AuthentificationService } from '../../services/authentification.service
 })
 export class TransfertComponent implements OnInit {
 transfert: FormGroup;
-  constructor( private auth: AuthentificationService) { }
+  constructor( private auth: AuthentificationService, private route: Router) { }
 
   ngOnInit() {
     this.transfert = new FormGroup({
@@ -31,9 +32,11 @@ transfert: FormGroup;
  this.auth.postEnvoi(envoi).subscribe(
   data => {
     console.log(data);
+    alert(JSON.stringify('Transfert effectue avec succes Merci d/avoir fait confiance a NELDAMPAY'));
+    this.route.navigate(['home']);
 
 });
-}
+}p
 
 
 }

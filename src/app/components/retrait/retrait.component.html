@@ -1,6 +1,8 @@
+<app-navbar></app-navbar>
 <section class="ready__started project__form">
     <div class="container">
-        <h3 class="text-center">BIENVENUE CHEZ NELPAMPAY! TRANSACTIONS(RETRAIT)</h3>
+        <h3 class="text-center">NELDAMPAY</h3>
+        <p>Merci de verifier que le NIN saisi correspond a' celui sur la CNI du beneficiaire</p>
         <div class="ready__started-box">
             <form class="main__form" [formGroup]="retrait">
                 <div class="row">
@@ -12,7 +14,7 @@
                     </div>
                     <div class="col-md-6 ">
                         <div class="form-group ">
-                            <input type="number" class="form-control " formControlName="ninbenef" placeholder="+221776685975" value={{ninbenef}} id="ninbenef">
+                            <input type="number" class="form-control " formControlName="ninbenef" placeholder="130920" value={{ninbenef}} id="ninbenef">
                             <label for="numero du beneficiare ">CNI du beneficiare*</label>
                         </div>
                     </div>
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <div class="text-center ">
-                    <button type="submit " class="btn btn-success" (click)="OnRetrait() "><span>VALIDER LE RETRAIT
+                    <button type="submit " class="btn btn-get" (click)="OnRetrait() "><span>VALIDER LE RETRAIT
                             </span></button></div>
             </form>
         </div>

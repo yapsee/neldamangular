@@ -96,7 +96,9 @@ export class AccountcreateComponent implements OnInit {
       };
     this.auth.postBank(bank).subscribe(
         data => {
-          console.log(data);
+          //console.log(data);
+        alert(JSON.stringify('Vous venez de creer un compte pour un nouveau partenaire'));
+
         }
       );
  } else { // Pour partenaire existant on renseigne id part et montant a deposer
@@ -111,7 +113,8 @@ export class AccountcreateComponent implements OnInit {
 
     this.auth.postBank(bank).subscribe(
         data => {
-          console.log(data);
+          //console.log(data);
+          alert(JSON.stringify('Vous venez de creer un nouveau compte pour le partenaire dont vous ave saisi le ninea'));
         });
  }
 
